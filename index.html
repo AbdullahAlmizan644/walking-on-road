@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walking-On-Road</title>
+    <style>
+        .main{
+            width: 600px;
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .background{
+            height: inherit;
+            width: 200%;
+            background: url("road.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            animation: background-move 20s linear infinite;
+        }
+
+
+        .man-walk{
+            width: 75px;
+            height: 132px;
+            background: url("capguy-walk.png");
+            position: absolute;
+            bottom: 20px;
+            left: 200px;
+            animation: background-move 1s steps(8) infinite;
+
+        }
+
+        .wheel{
+            width: 100px;
+            height: 100px;
+            background-color: lightcoral;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            animation: move 10s linear infinite;
+        }
+
+        .wheel2{
+            width: 70px;
+            height: 70px;
+            background-color: lightgreen;
+            /* border-radius: 50%; */
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            animation: size 2s linear infinite;
+
+            
+        }
+
+        @keyframes background-move{
+            0%{
+                background-position: 0;
+            }
+
+            100%{
+                background-position: -600px;
+
+            }
+
+        }
+
+        @keyframes size{
+
+            0%{
+                transform: rotate(0deg);
+            }
+
+            25%{
+                transform: rotate(90deg);
+            }
+
+            50%{
+                transform: rotate(180deg);
+            }
+
+            75%{
+                transform: rotate(270deg);
+            }
+
+            100%{
+                transform: rotate(360deg);
+            }
+            
+        }
+
+
+        @keyframes move{
+
+            0%{
+                left: 0;
+                transform: scale(1);
+            }
+
+            25%{
+                left: 25%;
+                transform: scale(0.8);
+            }
+
+            50%{
+                left: 50%;
+                transform: scale(0.6);
+            }
+
+            75%{
+                left: 75%;
+                transform: scale(0.4);
+            }
+
+            100%{
+                left: 100%;
+                transform: scale(0.2);
+            }
+            
+
+
+
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <!-- <iframe width="0" height="0" src="music.mp3" frameborder="0" allowfullscreen> </iframe> -->
+    <audio src="music.mp3" autoplay loop></audio>
+    <div class="main">
+        <div class="background">
+            <div class="man-walk">
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="wheel">
+        <div class="wheel2">
+
+        </div>
+
+    </div>
+    
+</body>
+</html>
